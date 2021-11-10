@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var count=0;
+        var e=0;
+        var f=0;
+           var board = document.createElement("div");
+     board.style.width="500px";
+    //  board.style.height="300px";
+     board.style.display="flex";
+     board.style.flexDirection="row";
+     board.style.flexWrap="wrap";
+     board.style.position="absolute";
+     board.style.top="400px";
+    //  board.style.left="300px";
+ 
+        for(i=0;i<26;i++){
+            var alphabets=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W'
+        ,'X','Y','Z']
+          var words=['APPLE','ORANGE','GRAPES'];
+         
+            var box = document.createElement("button")
+            box.setAttribute=("id",i)
+            box.innerText=alphabets[i];
+             box.style.width="7%";
+             box.style.height="50px";
+            //  box.setAttribute("class",i)
+            box.style.backgroundColor="pink"
+             box.style.border="1px solid grey"
+            //  box.style.marginBottom="2px";
+            //  box.style.marginRight="1px";
+             
+             box.addEventListener("click",function(){
+                 
+                 var d=[];
+                 
+                 for(i=0;i<array.length;i++){
+                     if((this.innerText)==(array[i])){
+                        document.getElementById(i).innerText=array[i];
+                        f=f+1;
+                 
+                     }else{
+                        d.push(array[i])
+                        
+                     }
+                    } if((d.join(""))==(array.split("").join(""))){  
+                        e=e+1;
+                    }
+                console.log(e)
+                if(e==6){
+                    console.log("finished")
+                    window.alert("game over")
+                    location.reload()
+                }
+                if(f==(array.length)){
+                    window.alert("YOU WON")
+                    location.reload()
+                }
+             })
+            board.appendChild(box)
+        }
+      
+        document.body.appendChild(board)
+
+        // display random values
+        // create new flex board
+        var board1=document.createElement("div");
+        board1.style.width="500px";
+    //  board.style.height="300px";
+     board1.style.display="flex";
+     board1.style.flexDirection="row";
+     board1.style.flexWrap="wrap";
+     board1.style.position="absolute";
+     board1.style.top="200px";
+    //  board.style.left="300px";
+ 
+
+        var words=['APPLE','ORANGE','GRAPES'];
+        var text=document.createElement("div");
+        
+         array=words[(Math.floor(Math.random()*(words.length)))];
+         console.log(array.split(""))
+        for(i=0;i<array.length;i++){
+            var textbox=document.createElement("div")
+            // textbox.innerText=array[i];
+            textbox.style.width="50px";
+            textbox.style.height="50px";
+            textbox.style.marginRight="2px";
+            textbox.setAttribute("id",i)
+            textbox.style.backgroundColor="orange"
+            board1.appendChild(textbox)
+        }
+   
+
+        document.body.appendChild(board1);
+    </script>
+</body>
+</html>
